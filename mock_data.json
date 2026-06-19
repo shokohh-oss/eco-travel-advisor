@@ -1,0 +1,280 @@
+{
+  "hotels": {
+    "Paris": [
+      {
+        "name": "Hotel Fabric",
+        "eco_certified": true,
+        "certification": "Green Key",
+        "price_per_night": 120,
+        "eco_score": "green",
+        "features": ["solar panels", "rainwater harvesting", "organic breakfast"]
+      },
+      {
+        "name": "Generator Paris",
+        "eco_certified": false,
+        "certification": null,
+        "price_per_night": 65,
+        "eco_score": "amber",
+        "features": ["recycling programme", "energy-saving lighting"]
+      }
+    ],
+    "London": [
+      {
+        "name": "The Zetter Hotel",
+        "eco_certified": true,
+        "certification": "EarthCheck",
+        "price_per_night": 180,
+        "eco_score": "green",
+        "features": ["borehole water", "solar thermal", "locally sourced food"]
+      },
+      {
+        "name": "Hub by Premier Inn",
+        "eco_certified": false,
+        "certification": null,
+        "price_per_night": 90,
+        "eco_score": "amber",
+        "features": ["LED lighting", "linen reuse programme"]
+      }
+    ],
+    "Berlin": [
+      {
+        "name": "Orania.Berlin",
+        "eco_certified": true,
+        "certification": "Green Key",
+        "price_per_night": 140,
+        "eco_score": "green",
+        "features": ["100% renewable energy", "plastic-free", "local suppliers"]
+      },
+      {
+        "name": "Generator Berlin",
+        "eco_certified": false,
+        "certification": null,
+        "price_per_night": 55,
+        "eco_score": "amber",
+        "features": ["recycling programme", "energy-saving lighting"]
+      }
+    ],
+    "Rome": [
+      {
+        "name": "Hotel Santa Maria",
+        "eco_certified": true,
+        "certification": "Legambiente Turismo",
+        "price_per_night": 110,
+        "eco_score": "green",
+        "features": ["solar water heating", "organic garden", "bike rental"]
+      },
+      {
+        "name": "The Beehive",
+        "eco_certified": true,
+        "certification": "Green Key",
+        "price_per_night": 75,
+        "eco_score": "green",
+        "features": ["vegetarian cafe", "recycling", "eco toiletries"]
+      }
+    ],
+    "Barcelona": [
+      {
+        "name": "Hotel Praktik Rambla",
+        "eco_certified": true,
+        "certification": "Biosphere Tourism",
+        "price_per_night": 100,
+        "eco_score": "green",
+        "features": ["energy management system", "local food", "bike hire"]
+      },
+      {
+        "name": "Equity Point Hostel",
+        "eco_certified": false,
+        "certification": null,
+        "price_per_night": 45,
+        "eco_score": "amber",
+        "features": ["recycling programme", "energy-saving lighting"]
+      }
+    ],
+    "Amsterdam": [
+      {
+        "name": "Hotel V Nesplein",
+        "eco_certified": true,
+        "certification": "Green Key",
+        "price_per_night": 130,
+        "eco_score": "green",
+        "features": ["solar energy", "locally sourced breakfast", "bike rental"]
+      },
+      {
+        "name": "Stayokay Hostel Amsterdam",
+        "eco_certified": true,
+        "certification": "Green Key",
+        "price_per_night": 50,
+        "eco_score": "green",
+        "features": ["energy management", "recycling", "sustainable catering"]
+      }
+    ],
+    "Tokyo": [
+      {
+        "name": "Trunk Hotel",
+        "eco_certified": true,
+        "certification": "LEED Certified",
+        "price_per_night": 200,
+        "eco_score": "green",
+        "features": ["renewable energy", "zero waste policy", "local produce"]
+      },
+      {
+        "name": "Khaosan Tokyo Origami",
+        "eco_certified": false,
+        "certification": null,
+        "price_per_night": 55,
+        "eco_score": "amber",
+        "features": ["energy-saving systems", "recycling programme"]
+      }
+    ],
+    "Istanbul": [
+      {
+        "name": "Ajwa Hotel Sultanahmet",
+        "eco_certified": true,
+        "certification": "Green Star",
+        "price_per_night": 160,
+        "eco_score": "green",
+        "features": ["water conservation", "solar heating", "local food sourcing"]
+      },
+      {
+        "name": "Cheers Hostel",
+        "eco_certified": false,
+        "certification": null,
+        "price_per_night": 35,
+        "eco_score": "amber",
+        "features": ["recycling bins", "energy-saving lighting"]
+      }
+    ],
+    "Dubai": [
+      {
+        "name": "Jumeirah Al Naseem",
+        "eco_certified": true,
+        "certification": "EarthCheck",
+        "price_per_night": 350,
+        "eco_score": "green",
+        "features": ["marine conservation", "solar energy", "waste reduction"]
+      },
+      {
+        "name": "Rove Downtown",
+        "eco_certified": false,
+        "certification": null,
+        "price_per_night": 95,
+        "eco_score": "amber",
+        "features": ["LED lighting", "linen reuse programme"]
+      }
+    ],
+    "default": [
+      {
+        "name": "Local Eco Guesthouse",
+        "eco_certified": true,
+        "certification": "Local Green Certification",
+        "price_per_night": 80,
+        "eco_score": "green",
+        "features": ["solar energy", "organic meals", "recycling"]
+      },
+      {
+        "name": "City Budget Hotel",
+        "eco_certified": false,
+        "certification": null,
+        "price_per_night": 60,
+        "eco_score": "amber",
+        "features": ["energy-saving lighting", "linen reuse"]
+      }
+    ]
+  },
+  "activities": {
+    "Paris": [
+      {"name": "Cycling tour of Paris", "eco_score": "green", "carbon_kg": 0, "price": 25},
+      {"name": "Louvre Museum visit", "eco_score": "green", "carbon_kg": 0.5, "price": 17},
+      {"name": "Seine river cruise", "eco_score": "amber", "carbon_kg": 2.1, "price": 15},
+      {"name": "Versailles day trip by train", "eco_score": "green", "carbon_kg": 1.2, "price": 20}
+    ],
+    "London": [
+      {"name": "Walk the Thames Path", "eco_score": "green", "carbon_kg": 0, "price": 0},
+      {"name": "British Museum", "eco_score": "green", "carbon_kg": 0.3, "price": 0},
+      {"name": "Kew Gardens", "eco_score": "green", "carbon_kg": 0.8, "price": 18},
+      {"name": "Borough Market food tour", "eco_score": "green", "carbon_kg": 0.2, "price": 15}
+    ],
+    "Berlin": [
+      {"name": "Berlin Wall cycling tour", "eco_score": "green", "carbon_kg": 0, "price": 20},
+      {"name": "Tiergarten nature walk", "eco_score": "green", "carbon_kg": 0, "price": 0},
+      {"name": "Museum Island visit", "eco_score": "green", "carbon_kg": 0.4, "price": 18},
+      {"name": "Street art walking tour", "eco_score": "green", "carbon_kg": 0, "price": 15}
+    ],
+    "Rome": [
+      {"name": "Colosseum guided walk", "eco_score": "green", "carbon_kg": 0.2, "price": 22},
+      {"name": "Trastevere neighbourhood walk", "eco_score": "green", "carbon_kg": 0, "price": 0},
+      {"name": "Bike tour along Appian Way", "eco_score": "green", "carbon_kg": 0, "price": 30},
+      {"name": "Local cooking class", "eco_score": "green", "carbon_kg": 0.5, "price": 65}
+    ],
+    "Barcelona": [
+      {"name": "Barceloneta beach walk", "eco_score": "green", "carbon_kg": 0, "price": 0},
+      {"name": "Park Guell visit", "eco_score": "green", "carbon_kg": 0.3, "price": 10},
+      {"name": "Cycling tour of Gothic Quarter", "eco_score": "green", "carbon_kg": 0, "price": 25},
+      {"name": "Local market cooking class", "eco_score": "green", "carbon_kg": 0.4, "price": 70}
+    ],
+    "Amsterdam": [
+      {"name": "Canal cycling tour", "eco_score": "green", "carbon_kg": 0, "price": 22},
+      {"name": "Vondelpark nature walk", "eco_score": "green", "carbon_kg": 0, "price": 0},
+      {"name": "Rijksmuseum visit", "eco_score": "green", "carbon_kg": 0.3, "price": 20},
+      {"name": "Local cheese and market tour", "eco_score": "green", "carbon_kg": 0.1, "price": 18}
+    ],
+    "Tokyo": [
+      {"name": "Yoyogi Park nature walk", "eco_score": "green", "carbon_kg": 0, "price": 0},
+      {"name": "Cycling tour of Yanaka", "eco_score": "green", "carbon_kg": 0, "price": 30},
+      {"name": "Edo-Tokyo Museum", "eco_score": "green", "carbon_kg": 0.4, "price": 6},
+      {"name": "Tsukiji outer market tour", "eco_score": "green", "carbon_kg": 0.2, "price": 20}
+    ],
+    "Istanbul": [
+      {"name": "Walking tour of Sultanahmet", "eco_score": "green", "carbon_kg": 0, "price": 15},
+      {"name": "Bosphorus ferry crossing", "eco_score": "amber", "carbon_kg": 1.5, "price": 5},
+      {"name": "Grand Bazaar local shopping", "eco_score": "green", "carbon_kg": 0.1, "price": 0},
+      {"name": "Hagia Sophia guided walk", "eco_score": "green", "carbon_kg": 0.2, "price": 18}
+    ],
+    "Dubai": [
+      {"name": "Desert conservation safari", "eco_score": "amber", "carbon_kg": 3.5, "price": 85},
+      {"name": "Al Fahidi heritage walk", "eco_score": "green", "carbon_kg": 0, "price": 0},
+      {"name": "Dubai Creek abra boat ride", "eco_score": "amber", "carbon_kg": 0.8, "price": 2},
+      {"name": "Sustainable city tour", "eco_score": "green", "carbon_kg": 0.5, "price": 40}
+    ],
+    "default": [
+      {"name": "City walking tour", "eco_score": "green", "carbon_kg": 0, "price": 10},
+      {"name": "Local market visit", "eco_score": "green", "carbon_kg": 0.1, "price": 5},
+      {"name": "Museum or gallery visit", "eco_score": "green", "carbon_kg": 0.3, "price": 15},
+      {"name": "Cycling tour", "eco_score": "green", "carbon_kg": 0, "price": 20}
+    ]
+  },
+  "carbon_offsets": [
+    {
+      "name": "Gold Standard Forest Protection",
+      "provider": "Gold Standard",
+      "price_per_tonne": 15,
+      "project_type": "Forest conservation",
+      "location": "Kenya",
+      "url": "https://www.goldstandard.org"
+    },
+    {
+      "name": "Verified Carbon Standard - Wind Farm",
+      "provider": "Verra VCS",
+      "price_per_tonne": 12,
+      "project_type": "Renewable energy",
+      "location": "India",
+      "url": "https://verra.org"
+    },
+    {
+      "name": "Cool Effect - Cookstove Project",
+      "provider": "Cool Effect",
+      "price_per_tonne": 10,
+      "project_type": "Clean cooking",
+      "location": "Uganda",
+      "url": "https://www.cooleffect.org"
+    },
+    {
+      "name": "Atmosfair Flight Offset",
+      "provider": "Atmosfair",
+      "price_per_tonne": 23,
+      "project_type": "Renewable energy",
+      "location": "Global",
+      "url": "https://www.atmosfair.de"
+    }
+  ]
+}

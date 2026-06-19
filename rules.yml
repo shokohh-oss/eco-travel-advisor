@@ -1,0 +1,79 @@
+version: "3.1"
+
+rules:
+
+- rule: Greet user
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- rule: Say goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- rule: Ask capabilities
+  steps:
+    - intent: ask_capabilities
+    - action: utter_capabilities
+
+- rule: Handle out of scope
+  steps:
+    - intent: out_of_scope
+    - action: utter_out_of_scope
+
+- rule: Handle NLU fallback
+  steps:
+    - intent: nlu_fallback
+    - action: action_custom_fallback
+
+- rule: Human handover
+  steps:
+    - intent: human_handover
+    - action: action_human_handover
+
+- rule: Start and activate trip form
+  steps:
+    - intent: start
+    - action: trip_form
+    - active_loop: trip_form
+
+- rule: Submit trip form
+  condition:
+    - active_loop: trip_form
+  steps:
+    - action: trip_form
+    - active_loop: null
+    - slot_was_set:
+      - requested_slot: null
+    - action: utter_ask_services
+
+- rule: Ask transportation
+  steps:
+    - intent: ask_transportation
+    - action: action_compare_transport
+    - action: utter_anything_else
+
+- rule: Ask accommodation
+  steps:
+    - intent: ask_hotel
+    - action: action_compare_accommodation
+    - action: utter_anything_else
+
+- rule: Ask activities
+  steps:
+    - intent: ask_activities
+    - action: action_compare_activities
+    - action: utter_anything_else
+
+- rule: Ask carbon offset
+  steps:
+    - intent: ask_carbon
+    - action: action_carbon_offset
+    - action: utter_anything_else
+
+- rule: Ask itinerary
+  steps:
+    - intent: ask_itinerary
+    - action: action_final_itinerary
+    - action: utter_anything_else

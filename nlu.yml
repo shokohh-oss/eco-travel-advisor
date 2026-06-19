@@ -1,0 +1,544 @@
+version: "3.1"
+
+nlu:
+
+- intent: greet
+  examples: |
+    - hi there
+    - hello there
+    - greetings
+    - greetings friend
+    - good morning
+    - good evening
+    - good afternoon
+    - good night
+    - hey there
+    - hey
+    - Hello
+    - whats up?
+    - how are you doing?
+    - nice to see you
+    - glad to see you here
+    - hey buddy
+    - hello my friend
+    - hi, welcome
+    - hello, welcome
+    - welcome
+
+- intent: goodbye
+  examples: |
+    - bye
+    - bye bye
+    - goodbye
+    - see you later
+    - see you next time
+    - farewell
+    - ciao
+    - take care
+    - have a nice day
+    - have a good one
+    - have a nice trip
+    - until next time
+
+- intent: start
+  examples: |
+    - /start
+    - start
+    - begin
+    - let's start
+    - start booking
+    - plan a trip
+    - I want to plan a trip
+    - help me plan a trip
+    - let's plan a trip
+    - I'd like to plan a trip
+    - plan my trip
+    - help me plan a holiday
+    - I want to book a trip
+    - book a trip
+    - I want to travel
+    - help me travel
+    - start planning
+    - let's go
+
+- intent: ask_capabilities
+  examples: |
+    - what do you do?
+    - what can you help with?
+    - how can you help me?
+    - what are your features?
+    - tell me what you can do
+    - what do you offer?
+    - what can this bot do?
+    - what is this bot for?
+    - how does this work?
+    - what services do you provide?
+
+- intent: ask_destination
+  examples: |
+    - I want to go to [Paris](destination)
+    - I want to travel to [Iran](destination)
+    - My destination is [Tokyo](destination)
+    - I would like to travel to [Rome](destination)
+    - I would like to go to [Berlin](destination)
+    - I want to visit [Venice](destination)
+    - book me a trip to [Berlin](destination)
+    - I want to visit [Dubai](destination)
+    - can I travel to [Istanbul](destination)?
+    - take me to [London](destination)
+    - I am planning a trip to [Bali](destination)
+    - can you help me plan a trip to [Sydney](destination)?
+    - I want to go to [Amsterdam](destination)
+    - A round trip to [Barcelona](destination)
+    - I want to travel from [Turkey](origin) to [Brazil](destination)
+    - from [London](origin) to [Paris](destination)
+    - trip from [Berlin](origin) to [Rome](destination)
+    - flying from [Tokyo](origin) to [Sydney](destination)
+    - I am going from [Madrid](origin) to [Amsterdam](destination)
+    - [Lagos](destination)
+    - [Mumbai](destination)
+    - [São Paulo](destination)
+    - [Cairo](destination)
+    - [Bangkok](destination)
+    - [Toronto](destination)
+    - I want to go from [London](origin) to [Paris](destination)
+    - I want to travel from [Berlin](origin) to [Rome](destination)
+    - from [London](origin) to [Paris](destination)
+    - going from [Tokyo](origin) to [Sydney](destination)
+    - [Tehran](origin) to [Los Angeles](destination)
+    - fly from [Tehran](origin) to [Los Angeles](destination)
+    - want to go to [Los Angeles](destination) from [Tehran](origin)
+    - [New York](origin) to [Paris](destination)
+    - I want a plane from [Amsterdam](origin) to [Basel](destination)
+    - flight from [Amsterdam](origin) to [Basel](destination)
+    - train from [Berlin](origin) to [Paris](destination)
+    - bus from [London](origin) to [Amsterdam](destination)
+
+- intent: provide_destination
+  examples: |
+    - [London](destination)
+    - [Paris](destination)
+    - going to [Madrid](destination)
+    - [Amsterdam](destination) please
+    - I want to go to [Rome](destination)
+    - destination is [Vienna](destination)
+    - travelling to [Prague](destination)
+    - [Basel](destination)
+    - [Zurich](destination)
+    - [Geneva](destination)
+    - [Bern](destination)
+    - [Nairobi](destination)
+    - [Lagos](destination)
+    - [Cape Town](destination)
+    - [Buenos Aires](destination)
+    - [Mexico City](destination)
+    - [Beijing](destination)
+    - [Shanghai](destination)
+    - [Singapore](destination)
+    - [Kuala Lumpur](destination)
+    - [Mumbai](destination)
+    - [Delhi](destination)
+    - [Cairo](destination)
+    - [Casablanca](destination)
+    - [Johannesburg](destination)
+    - [São Paulo](destination)
+    - [Bangkok](destination)
+    - [Seoul](destination)
+    - [Taipei](destination)
+    - [Lisbon](destination)
+    - [Athens](destination)
+    - [Copenhagen](destination)
+    - [Stockholm](destination)
+    - [Oslo](destination)
+    - [Helsinki](destination)
+
+- intent: provide_origin
+  examples: |
+    - I am departing from [New York](origin)
+    - My starting point is [London](origin)
+    - I will be leaving from [Tokyo](origin)
+    - my origin is [Paris](origin)
+    - I am coming from [Berlin](origin)
+    - flying out of [Rome](origin)
+    - I am based in [Berlin](origin)
+    - starting my journey in [Basel](origin)
+    - leaving [Zurich](origin) on my trip
+    - my home city is [Tehran](origin)
+    - I will fly from [Istanbul](origin)
+    - catching a train from [Athens](origin)
+    - my flight departs from [Prague](origin)
+    - currently in [Hamburg](origin)
+    - traveling from [Lucerne](origin)
+    - point of departure is [Doha](origin)
+    - I am in [Baku](origin) right now
+    - currently in [Stockholm](origin)
+    - from [Amsterdam](origin)
+    - leaving from [Amsterdam](origin)
+    - leaving from [Nairobi](origin)
+    - departing from [Cape Town](origin)
+    - from [Singapore](origin)
+    - from [Bangkok](origin)
+    - from [Mumbai](origin)
+    - from [Beijing](origin)
+    - from [Seoul](origin)
+    - from [Cairo](origin)
+    - from [Buenos Aires](origin)
+    - from [São Paulo](origin)
+    - from [Mexico City](origin)
+    - from [Johannesburg](origin)
+    - from [Kuala Lumpur](origin)
+    - from [Copenhagen](origin)
+    - from [Oslo](origin)
+    - from [Helsinki](origin)
+    - from [Lisbon](origin)
+    - from [Athens](origin)
+
+- intent: provide_date
+  examples: |
+    - I want to travel on [15th June](travel_date)
+    - my trip is [tomorrow](travel_date)
+    - I am leaving [next week](travel_date)
+    - we are traveling on [August 20](travel_date)
+    - I want to go on [Monday](travel_date)
+    - I am departing on [May 10](travel_date)
+    - my flight is on [tomorrow](travel_date)
+    - we leave on [Monday](travel_date)
+    - I was thinking [next month](travel_date)
+    - planning to go in [next weekend](travel_date)
+    - the trip is on [October 25](travel_date)
+    - I will travel in [July](travel_date)
+    - departing [Monday](travel_date)
+    - from [25 to 28 december](travel_date)
+    - between [25th and 28th December](travel_date)
+    - on [april](travel_date)
+    - in [april](travel_date)
+    - on [25th december](travel_date)
+    - in [december](travel_date)
+    - from [1st to 5th January](travel_date)
+    - [Dec 26th](travel_date)
+    - [26th Dec](travel_date)
+    - [26 December](travel_date)
+    - [Jan 5th](travel_date)
+    - [March 15th](travel_date)
+    - [Feb 10](travel_date)
+    - [25th Dec](travel_date)
+    - [10th January](travel_date)
+    - [june 25](travel_date)
+    - [june 10](travel_date)
+    - [july 4](travel_date)
+    - [august 15](travel_date)
+    - [march 3](travel_date)
+    - [october 31](travel_date)
+    - [december 25](travel_date)
+    - [january 1](travel_date)
+
+- intent: provide_budget
+  examples: |
+    - my budget is [500](budget)
+    - I have around [1000](budget) euros
+    - we can spend [700](budget)
+    - our budget is [300](budget) dollars
+    - I can spend up to [2000](budget)
+    - I have [800](budget) euros
+    - budget around [1500](budget) Swiss francs
+    - no more than [600](budget)
+    - roughly [900](budget) euros per person
+    - we have about [1200](budget) total
+    - maximum [2500](budget) for the trip
+    - approximately [1800](budget) to spend
+    - I can afford [1000](budget) pounds
+    - our total budget is [2200](budget) Swiss francs
+    - approximately [600](budget) dollars
+    - roughly [350](budget) euros per person
+    - [800](budget)
+    - [1500](budget)
+    - [200](budget)
+    - just [500](budget)
+    - [1000](budget) please
+    - my budget is [500](budget) euros
+    - I have [1000](budget) euros to spend
+    - budget of [300](budget) euros
+    - [500](budget) euro budget
+    - spending limit is [2000](budget) euros
+
+- intent: provide_travelers
+  examples: |
+    - we are [2](travelers_number) people
+    - I am traveling with [4](travelers_number) people
+    - there will be [3](travelers_number) of us
+    - booking for [1](travelers_number) person
+    - our group has [5](travelers_number) travelers
+    - just [1](travelers_number) person traveling alone
+    - a couple so [2](travelers_number) people
+    - family of [5](travelers_number)
+    - group of [8](travelers_number) friends
+    - [10](travelers_number) adults traveling together
+    - it will be [2](travelers_number) of us
+    - me and my partner, so [2](travelers_number)
+    - just me, [1](travelers_number) person
+    - party of [15](travelers_number)
+    - booking for [4](travelers_number) adults
+    - there are [8](travelers_number) in our group
+    - we will be [10](travelers_number) passengers
+    - traveling with [2](travelers_number) colleagues
+
+- intent: provide_location
+  examples: |
+    - I am in [Berlin](user_location)
+    - I am currently in [London](user_location)
+    - my location is [Tehran](user_location)
+    - I am based in [New York](user_location)
+    - currently in [Paris](user_location)
+    - I live in [Tokyo](user_location)
+    - I am located in [Sydney](user_location)
+    - my city is [Dubai](user_location)
+    - I am from [Istanbul](user_location)
+    - located in [Amsterdam](user_location)
+
+- intent: ask_transportation
+  examples: |
+    - What transport options do I have?
+    - How can I get from London to Paris?
+    - Is there a train available?
+    - Which is the cheapest way to travel?
+    - Can I fly there?
+    - Which transport options are eco-friendly?
+    - are there any buses available?
+    - can I travel by train?
+    - what is the fastest transportation option?
+    - how do I get there?
+    - I prefer to travel by [plane](transport_type)
+    - I would like to take a [train](transport_type)
+    - What about [bus](transport_type) travel?
+    - I am looking for [car rental](transport_type) options
+    - can I travel by [ship](transport_type)?
+    - is there a [ferry](transport_type) available?
+    - what about travelling by [ship](transport_type)?
+    - I want to take a [ferry](transport_type)
+    - I want to fly by [plane](transport_type)
+    - I prefer [train](transport_type) over flying
+    - book me a [bus](transport_type) ticket
+    - is the [train](transport_type) eco-friendly?
+    - transport
+    - transport options
+    - show me transport
+    - transportation
+    - show me transportation options
+
+- intent: ask_hotel
+  examples: |
+    - what hotels are available in Rome?
+    - what accommodation options do I have?
+    - Are there any eco-friendly hotels in France?
+    - can you find me a place to stay in Yemen?
+    - Is there an eco-lodge in Bali?
+    - find me a cheap hotel
+    - I need a luxury hotel
+    - are there any eco friendly hostels available in Istanbul?
+    - book an accommodation for me
+    - I am looking for a [luxury](hotel_type) hotel
+    - I need an [eco-friendly](hotel_type) resort
+    - Do you have any [budget](hotel_type) accommodation options?
+    - show me [eco-lodge](hotel_type) options
+    - I want a [hostel](hotel_type)
+    - find me an [eco-hotel](hotel_type)
+    - looking for [sustainable](hotel_type) accommodation
+    - I prefer [green certified](hotel_type) hotels
+    - any [boutique](hotel_type) hotels available?
+    - hostels
+    - eco-friendly hotels
+    - eco-lodge
+    - eco-hotel
+    - hotels
+    - accommodation
+    - show me hotels
+    - find hotels
+    - what hotels
+
+- intent: ask_activities
+  examples: |
+    - what activities are available?
+    - what can I do there?
+    - show me activities
+    - what things can I do in the city?
+    - suggest some activities
+    - any activities in the city?
+    - I want to explore activities
+    - show me things to do
+    - any sustainable things to do?
+    - green activities please
+    - any nature tours?
+    - cultural activities please
+    - what is there to do in the city?
+    - any recommendations for activities?
+    - how can I spend my time there?
+    - show me eco-friendly activities
+    - any nature tours available?
+    - I want to go [hiking](eco_activity)
+    - can we do [kayaking](eco_activity)?
+    - are there [wildlife tour](eco_activity) options?
+    - I would love some [cycling](eco_activity)
+    - is there a [nature walk](eco_activity) available?
+    - I want to try [snorkeling](eco_activity)
+    - can I go [cycling](eco_activity) there?
+    - I want to [volunteer](eco_activity) on my trip
+    - I would like to volunteer on my trip
+    - any [hiking](eco_activity) trails nearby?
+    - I want to do some [volunteering](eco_activity)
+
+- intent: ask_carbon
+  examples: |
+    - how can I offset my carbon?
+    - what are carbon offset options?
+    - I want to offset my emissions
+    - how do I reduce my carbon footprint?
+    - carbon offset please
+    - suggest carbon offset
+    - help me offset my trip
+    - offset my carbon footprint
+    - how much CO₂ does my trip produce?
+    - I want to travel carbon neutral
+    - environmental impact of my trip
+    - what is my carbon footprint?
+    - how green is my trip?
+    - calculate my emissions
+
+- intent: ask_itinerary
+  examples: |
+    - show me my full itinerary
+    - what is my trip summary?
+    - give me the final plan
+    - show me everything
+    - final itinerary please
+    - summarise my trip
+    - what did I book?
+    - show me my booking
+    - can you tell me what I have planned
+    - what is my travel plan?
+    - show me my trip details
+    - what have I chosen so far?
+
+- intent: human_handover
+  examples: |
+    - I want to speak to a human
+    - connect me to an agent
+    - I need human help
+    - speak to a person
+    - talk to a real person
+    - human agent please
+    - I want to talk to someone
+    - get me a real person
+    - I need a real agent
+    - transfer me to support
+
+- intent: out_of_scope
+  examples: |
+    - what is the weather like?
+    - tell me a joke
+    - what is the capital of France?
+    - who won the world cup?
+    - can you book a restaurant for me?
+    - what is the exchange rate?
+    - translate this for me
+    - help me write an email
+    - what is the best cryptocurrency to buy?
+    - can you recommend a movie?
+    - what is the news today?
+    - help me with my homework
+    - what time is it?
+    - order me a taxi
+    - can you call someone for me?
+
+- lookup: destination
+  examples: |
+    - London
+    - Berlin
+    - Tokyo
+    - Paris
+    - New York
+    - Sydney
+    - Rome
+    - Madrid
+    - Amsterdam
+    - Barcelona
+    - Vienna
+    - Prague
+    - Istanbul
+    - Dubai
+    - Bangkok
+    - Singapore
+    - Mumbai
+    - Delhi
+    - Cairo
+    - São Paulo
+    - Buenos Aires
+    - Mexico City
+    - Toronto
+    - Los Angeles
+    - Seoul
+    - Beijing
+    - Shanghai
+    - Nairobi
+    - Cape Town
+    - Johannesburg
+    - Kuala Lumpur
+    - Taipei
+    - Lisbon
+    - Athens
+    - Copenhagen
+    - Stockholm
+    - Oslo
+    - Helsinki
+    - Basel
+    - Zurich
+    - Geneva
+    - Bern
+    - Tehran
+    - Lagos
+    - Casablanca
+    - Bali
+    - Venice
+    - Warsaw
+    - Budapest
+    - Brussels
+
+- lookup: transport_type
+  examples: |
+    - train
+    - flight
+    - bus
+    - car
+    - ferry
+    - coach
+    - electric vehicle
+    - plane
+    - ship
+    - car rental
+
+- lookup: hotel_type
+  examples: |
+    - eco lodge
+    - hostel
+    - green hotel
+    - campsite
+    - guesthouse
+    - sustainable resort
+    - eco-friendly hotel
+    - eco-hotel
+    - boutique hotel
+    - luxury hotel
+    - budget hotel
+    - green certified hotel
+
+- lookup: eco_activity
+  examples: |
+    - hiking
+    - cycling
+    - kayaking
+    - wildlife tour
+    - nature walk
+    - snorkeling
+    - volunteering
+    - nature tour
+    - bird watching
+    - sustainable tour

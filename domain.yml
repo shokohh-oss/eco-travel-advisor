@@ -1,0 +1,141 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - ask_destination
+  - ask_transportation
+  - ask_hotel
+  - ask_activities
+  - provide_destination
+  - provide_date
+  - provide_budget
+  - provide_travelers
+  - provide_origin
+  - start
+  - ask_carbon
+  - ask_itinerary
+  - ask_capabilities
+  - human_handover
+  - provide_location
+  - nlu_fallback
+  - out_of_scope
+
+entities:
+  - origin
+  - destination
+  - timezone
+  - travel_date
+  - travelers_number
+  - budget
+  - hotel_type
+  - transport_type
+  - eco_activity
+  - user_location
+
+slots:
+  origin:
+    type: text
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: trip_form
+            requested_slot: origin
+  destination:
+    type: text
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: trip_form
+            requested_slot: destination
+  travel_date:
+    type: text
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: trip_form
+            requested_slot: travel_date
+  budget:
+    type: text
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: trip_form
+            requested_slot: budget
+  travelers_number:
+    type: text
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: trip_form
+            requested_slot: travelers_number
+  timezone:
+    type: text
+    mappings:
+      - type: from_text
+  transport_type:
+    type: text
+    mappings:
+      - type: from_text
+  hotel_type:
+    type: text
+    mappings:
+      - type: from_text
+  eco_activity:
+    type: text
+    mappings:
+      - type: from_text
+  user_location:
+    type: text
+    mappings:
+      - type: from_text
+
+forms:
+  trip_form:
+    required_slots:
+      - destination
+      - origin
+      - travel_date
+      - travelers_number
+      - budget
+
+responses:
+  utter_greet:
+    - text: "Hello! Welcome to the Eco-Travel Advisor 🌿. I help you plan carbon-conscious trips. Where are you planning to travel?"
+  utter_goodbye:
+    - text: "Goodbye! Travel sustainably 🌱"
+  utter_ask_destination:
+    - text: "Where would you like to travel to?"
+  utter_ask_origin:
+    - text: "Great! And where will you be travelling from?"
+  utter_ask_travel_date:
+    - text: "When are you planning to travel?"
+  utter_ask_travelers_number:
+    - text: "How many people will be travelling?"
+  utter_ask_budget:
+    - text: "What is your total budget in euros?"
+  utter_ask_services:
+    - text: "Great! I have your trip details 🎉. Would you like to compare 🚆 Transport, 🏨 Accommodation, 🌿 Activities, 🌍 Carbon offset, or see your full 📋 Itinerary?"
+  utter_anything_else:
+    - text: "Is there anything else I can help you with? You can ask about 🚆 Transport, 🏨 Accommodation, 🌿 Activities, 🌍 Carbon offset, or see your full 📋 Itinerary."
+  utter_capabilities:
+    - text: "I can help you compare eco-friendly transport, find sustainable accommodation, suggest green activities, calculate carbon offsets, and create full itineraries!"
+  utter_out_of_scope:
+    - text: "I can only help with eco-travel planning. Try asking about transport, accommodation, activities, or carbon offsets!"
+  utter_default:
+    - text: "I didn't quite understand that. You can ask about transport, accommodation, activities, carbon offsets, or your itinerary."
+  utter_handover:
+    - text: "Connecting you to a human agent. Please wait..."
+
+actions:
+  - action_compare_transport
+  - action_compare_accommodation
+  - action_compare_activities
+  - action_carbon_offset
+  - action_final_itinerary
+  - action_human_handover
+  - action_custom_fallback
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

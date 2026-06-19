@@ -1,0 +1,37 @@
+# ============================================================
+# Eco-Travel Advisor — .gitignore
+# ============================================================
+
+# ── Secret keys — NEVER commit these ──────────────────────
+.env
+*.env
+.env.*
+
+# ── Rasa trained models (large files) ─────────────────────
+models/
+.rasa/
+
+# ── Python cache ──────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# ── Virtual environments ───────────────────────────────────
+venv/
+env/
+.venv/
+rasa_venv/
+
+# ── Jupyter / Colab ───────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ── OS files ──────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Logs ──────────────────────────────────────────────────
+*.log
+rasa_logs/

@@ -1,0 +1,68 @@
+version: "3.8"
+
+# ============================================================
+# Eco-Travel Advisor — Docker Compose
+# For LOCAL testing only.
+# HuggingFace Spaces uses the Dockerfile directly (not compose).
+# ============================================================
+
+services:
+
+  # ── Action Server ─────────────────────────────────────────
+  action:
+    build: .
+    container_name: eco_action_server
+    command: rasa run actions --port 5055
+    ports:
+      - "5055:5055"
+    volumes:
+      - ./actions:/app/actions
+    networks:
+      - eco-net
+    restart: unless-stopped
+
+  # ── Rasa Core + NLU Server ────────────────────────────────
+  rasa:
+    build: .
+    container_name: eco_rasa_server
+    command: >
+      rasa run
+      --enable-api
+      --cors "*"
+      --port 5005
+      --endpoints endpoints.yml
+    ports:
+      - "5005:5005"
+    volumes:
+      - ./models:/app/models
+      - ./data:/app/data
+    depends_on:
+      - action
+    networks:
+      - eco-net
+    restart: unless-stopped
+
+  # ── Streamlit Frontend ────────────────────────────────────
+  frontend:
+    build: .
+    container_name: eco_streamlit
+    command: >
+      streamlit run app.py
+      --server.port 3000
+      --server.address 0.0.0.0
+      --server.headless true
+      --browser.gatherUsageStats false
+    ports:
+      - "3000:3000"
+    depends_on:
+      - rasa
+    networks:
+      - eco-net
+    environment:
+      - RASA_URL=http://rasa:5005
+    restart: unless-stopped
+
+# ── Internal network (action server NOT exposed publicly) ──
+networks:
+  eco-net:
+    driver: bridge

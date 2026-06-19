@@ -1,0 +1,130 @@
+version: "3.1"
+
+stories:
+
+- story: user greets then starts planning
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: start
+    - action: trip_form
+    - active_loop: trip_form
+    - active_loop: null
+    - action: utter_ask_services
+
+- story: user starts and asks transport
+  steps:
+    - intent: start
+    - action: trip_form
+    - active_loop: trip_form
+    - active_loop: null
+    - action: utter_ask_services
+    - intent: ask_transportation
+    - action: action_compare_transport
+    - action: utter_anything_else
+
+- story: user starts and asks accommodation
+  steps:
+    - intent: start
+    - action: trip_form
+    - active_loop: trip_form
+    - active_loop: null
+    - action: utter_ask_services
+    - intent: ask_hotel
+    - action: action_compare_accommodation
+    - action: utter_anything_else
+
+- story: user starts and asks activities
+  steps:
+    - intent: start
+    - action: trip_form
+    - active_loop: trip_form
+    - active_loop: null
+    - action: utter_ask_services
+    - intent: ask_activities
+    - action: action_compare_activities
+    - action: utter_anything_else
+
+- story: user starts and asks carbon offset
+  steps:
+    - intent: start
+    - action: trip_form
+    - active_loop: trip_form
+    - active_loop: null
+    - action: utter_ask_services
+    - intent: ask_carbon
+    - action: action_carbon_offset
+    - action: utter_anything_else
+
+- story: user starts and asks itinerary
+  steps:
+    - intent: start
+    - action: trip_form
+    - active_loop: trip_form
+    - active_loop: null
+    - action: utter_ask_services
+    - intent: ask_itinerary
+    - action: action_final_itinerary
+    - action: utter_anything_else
+
+- story: user asks destination directly then plans
+  steps:
+    - intent: ask_destination
+    - action: trip_form
+    - active_loop: trip_form
+    - active_loop: null
+    - action: utter_ask_services
+    - intent: ask_transportation
+    - action: action_compare_transport
+    - action: utter_anything_else
+
+- story: user browses transport then hotel
+  steps:
+    - intent: start
+    - action: trip_form
+    - active_loop: trip_form
+    - active_loop: null
+    - action: utter_ask_services
+    - intent: ask_transportation
+    - action: action_compare_transport
+    - action: utter_anything_else
+    - intent: ask_hotel
+    - action: action_compare_accommodation
+    - action: utter_anything_else
+
+- story: user browses transport then activities
+  steps:
+    - intent: start
+    - action: trip_form
+    - active_loop: trip_form
+    - active_loop: null
+    - action: utter_ask_services
+    - intent: ask_transportation
+    - action: action_compare_transport
+    - action: utter_anything_else
+    - intent: ask_activities
+    - action: action_compare_activities
+    - action: utter_anything_else
+
+- story: full eco trip end to end
+  steps:
+    - intent: start
+    - action: trip_form
+    - active_loop: trip_form
+    - active_loop: null
+    - action: utter_ask_services
+    - intent: ask_transportation
+    - action: action_compare_transport
+    - action: utter_anything_else
+    - intent: ask_hotel
+    - action: action_compare_accommodation
+    - action: utter_anything_else
+    - intent: ask_activities
+    - action: action_compare_activities
+    - action: utter_anything_else
+    - intent: ask_carbon
+    - action: action_carbon_offset
+    - action: utter_anything_else
+    - intent: ask_itinerary
+    - action: action_final_itinerary
+    - action: utter_anything_else
